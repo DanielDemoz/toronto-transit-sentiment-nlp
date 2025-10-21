@@ -1,0 +1,42 @@
+text,sentiment,timestamp,route_mentioned
+"@TTChelps The new streetcars are amazing! So smooth and comfortable 🚊",positive,2024-01-15 08:30:00,streetcar
+"Waited 45 minutes for the 29 Dufferin bus in -15 weather. This is unacceptable! #TTCdelays",negative,2024-01-15 07:45:00,bus
+"Just another commute on Line 1. Nothing special to report.",neutral,2024-01-15 09:00:00,subway
+"My Presto card didn't work AGAIN at King Station. So frustrating! @TTChelps fix this!",negative,2024-01-15 08:15:00,payment
+"Shoutout to the friendly TTC driver on the 504 King today. Made my morning! ☀️",positive,2024-01-15 08:00:00,streetcar
+"Bloor-Yonge station is absolutely packed. Can barely breathe in here 😫",negative,2024-01-15 17:30:00,subway
+"The accessibility features at Union Station are excellent. Well done TTC!",positive,2024-01-15 10:00:00,subway
+"Signal problems on Line 2 AGAIN. 3rd time this week! #TTCDelays",negative,2024-01-15 12:00:00,subway
+"Clean train today on the Spadina line. Appreciate the maintenance crew!",positive,2024-01-15 11:30:00,subway
+"Why do fares keep increasing when service quality keeps decreasing? 💸",negative,2024-01-15 14:00:00,fare
+"Normal rush hour commute. Subway was on time for once.",neutral,2024-01-15 17:00:00,subway
+"Felt very unsafe on the late night 35 Jane bus. Need more security presence.",negative,2024-01-16 23:30:00,bus
+"Love the new digital displays showing real-time arrivals. Very helpful! 📱",positive,2024-01-16 08:45:00,technology
+"Dirty seats and floor on the 510 Spadina streetcar. Needs cleaning badly.",negative,2024-01-16 09:15:00,streetcar
+"Just riding the TTC to work like every other day.",neutral,2024-01-16 08:00:00,general
+"The driver helped an elderly passenger with their walker. Faith in humanity restored! ❤️",positive,2024-01-16 10:30:00,bus
+"Station closures on weekends are so inconvenient. Plan better TTC!",negative,2024-01-16 13:00:00,service
+"Wheelchair ramp at Finch station is broken. This is a serious accessibility issue!",negative,2024-01-16 11:00:00,accessibility
+"Quick and efficient service on Line 4 this morning. No complaints!",positive,2024-01-16 07:30:00,subway
+"The crowding during peak hours is getting worse every year.",negative,2024-01-16 17:45:00,crowding
+"Just took the subway downtown. Standard commute.",neutral,2024-01-16 14:30:00,subway
+"TTC app is actually working properly today! Surprised and pleased 😊",positive,2024-01-17 08:00:00,technology
+"Bus driver blew past my stop without stopping. I was clearly visible!",negative,2024-01-17 16:00:00,bus
+"The heating on the streetcar is broken. Freezing cold ride 🥶",negative,2024-01-17 07:00:00,streetcar
+"Appreciate the customer service rep who helped me with my Presto issue.",positive,2024-01-17 12:00:00,customer_service
+"Another delay on Line 1 due to 'passenger assistance'. Happens every day.",negative,2024-01-17 08:30:00,subway
+"The art installations at some stations really brighten up the commute! 🎨",positive,2024-01-17 10:00:00,station
+"Regular commute on the 506 Carlton. Nothing noteworthy.",neutral,2024-01-17 09:00:00,streetcar
+"Security guard was very helpful when I was lost at St. George station.",positive,2024-01-17 15:00:00,security
+"Why is there no cell service in the tunnels? It's 2024! 📵",negative,2024-01-17 11:30:00,technology
+"The escalators at Spadina station have been broken for weeks. Fix them!",negative,2024-01-18 08:00:00,maintenance
+"Express bus service during rush hour is a great idea. More of this please!",positive,2024-01-18 07:30:00,bus
+"Just another ride on the TTC. Gets me from A to B.",neutral,2024-01-18 16:00:00,general
+"Station announcement was clear and helpful during the delay. Thank you!",positive,2024-01-18 09:30:00,communication
+"Smells like someone was smoking in the subway car. Disgusting! 🚭",negative,2024-01-18 22:00:00,cleanliness
+"The Blue Night Network is a lifesaver for night shift workers!",positive,2024-01-18 01:00:00,bus
+"Service alerts on Twitter are timely and accurate. Keep it up @TTChelps!",positive,2024-01-18 08:15:00,communication
+"Why do buses bunch together? Waited forever then 3 came at once.",negative,2024-01-18 17:30:00,bus
+"Taking my usual route to work on the TTC.",neutral,2024-01-18 08:45:00,general
+"The new station at Vaughan Metropolitan Centre is beautiful and modern!",positive,2024-01-18 14:00:00,station
+
