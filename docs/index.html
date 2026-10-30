@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transit Sentiment | Rider message analysis | Daniel S. Demoz</title>
+  <meta name="description" content="How well do simple sentiment methods read TTC rider messages? An honest test on 40 labelled examples, with every error shown.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.danieldemoz.com/kit/rai.css">
+</head>
+<body>
+  <div class="rai-top"><div class="wrap">
+    <span>Daniel S. Demoz · Responsible AI in practice</span>
+    <span><a href="https://www.danieldemoz.com/projects">All projects</a> &nbsp;·&nbsp; <a href="https://github.com/DanielDemoz/toronto-transit-sentiment-nlp">Code</a></span>
+  </div></div>
+
+  <header class="rai-hero"><div class="wrap">
+    <p class="eyebrow">Toronto transit sentiment</p>
+    <h1>How well can simple tools read the tone of rider messages?</h1>
+    <p class="lead">A small, honest test: 40 example messages about the TTC, labelled by hand, scored by a lexicon and a trained model. Every disagreement is shown.</p>
+    <div class="chips">
+      <span class="chip status">Real results · small sample</span>
+      <span class="chip">40 labelled examples</span>
+      <span class="chip">Every error shown</span>
+      <span class="chip">Not real social media data</span>
+    </div>
+  </div></header>
+
+  <nav class="steps" aria-label="Sections"><div class="wrap">
+    <a href="#results"><b>1</b>Results</a>
+    <a href="#errors"><b>2</b>Errors</a>
+    <a href="#all"><b>3</b>All messages</a>
+    <a href="#limits"><b>4</b>Limits</a>
+    <a href="#framework"><b>5</b>Reliable AI checklist</a>
+  </div></nav>
+
+  <main>
+    <section id="results"><div class="wrap">
+      <h2>Results: which simple method reads rider messages best?</h2>
+      <p class="sub">All 40 example messages were labelled by hand as negative, neutral or positive. Each method was scored against those labels.</p>
+      <div class="grid g2" style="margin-top:18px"><div class="card" style="overflow-x:auto"><table class="t"><tr><th>Method</th><th>Accuracy</th><th>Macro F1</th></tr><tr><td>Always guess the most common label</td><td>42%</td><td>0.20</td></tr><tr><td>TF-IDF + logistic regression (5-fold cross-validation)</td><td>45%</td><td>0.33</td></tr><tr class="hl"><td>VADER lexicon (no training)</td><td>80%</td><td>0.78</td></tr></table><p style="margin-top:12px;font-size:.88rem;color:var(--muted)">Macro F1 averages the score for each label, so a method that ignores the neutral label is penalized.</p></div><div class="card"><h3>Label mix</h3><div id="mix"></div><p style="font-size:.88rem;color:var(--muted);margin-top:8px">Negative and positive messages are about equal. Neutral is the smallest group.</p></div></div>
+      <div class="note warn"><b>Honest finding:</b> with only 40 messages, a trained model cannot learn much. TF-IDF with logistic regression scored 45%, barely above always guessing "negative" (42%). The ready-made VADER lexicon scored 80% with no training. A trained model needs far more labelled messages before it can compete.</div>
+    </div></section>
+    <section id="errors" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+      <h2>Where the lexicon gets it wrong</h2>
+      <p class="sub">VADER scores words, not meaning. These are the messages where it disagreed with the human label.</p>
+      <div class="card" style="margin-top:18px;overflow-x:auto"><table class="t" id="errs"></table></div>
+      <div class="grid g2" style="margin-top:18px"><div class="note info" style="margin:0"><b>Complaints without angry words are missed.</b> "Felt very unsafe" and "blew past my stop" read as positive, because words like "clearly" and "security" score well.</div><div class="note info" style="margin:0"><b>Questions look neutral.</b> "Why do buses bunch together?" is a complaint, but it has no negative word for the lexicon to find.</div></div>
+    </div></section>
+    <section id="all"><div class="wrap">
+      <h2>All example messages</h2>
+      <p class="sub">Filter by the human label. Rows in copper are where VADER disagreed.</p>
+      <div class="field" style="margin-top:18px;max-width:420px"><div class="seg" id="filt"></div></div>
+      <div class="card" style="overflow-x:auto"><table class="t" id="rows"></table></div>
+    </div></section>
+    <section id="limits" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+      <h2>Limits and human oversight</h2>
+      <div class="grid g2" style="margin-top:18px"><div class="card"><h3>Known limits</h3><ul style="margin:0;padding-left:18px"><li>The 40 messages are short examples written for testing, not collected social media posts. They show how the methods behave, not what Toronto riders think.</li><li>One person labelled them, so there is no check on how often two people would agree.</li><li>Sarcasm, questions and polite complaints are hard for a lexicon. The error table shows real cases.</li><li>The code includes an off-the-shelf DistilBERT option and topic models. They were not scored here, because 40 messages are too few to judge them.</li></ul></div><div class="card"><h3>Before real use</h3><ul style="margin:0;padding-left:18px"><li>Collect a few thousand real messages with permission and a clear privacy note.</li><li>Have two people label a sample and measure how often they agree.</li><li>Report results by topic, such as safety, so serious complaints are not lost in an average.</li><li>Keep a person reading flagged safety messages. A score should never be the only response to a safety report.</li></ul></div></div>
+    </div></section>
+    <section id="framework"><div class="wrap">
+      <h2>Reliable AI checklist</h2>
+      <p class="sub">The six questions of the <a href="https://www.danieldemoz.com/#method">Reliable AI Adoption Framework</a>, answered for this project.</p>
+      <div class="fw" style="margin-top:18px">
+        <div class="card"><h3>Business problem</h3><p>Help a transit team sort rider feedback by tone and topic, so complaints reach the right people faster.</p></div>
+        <div class="card"><h3>Data readiness</h3><p>40 example messages, hand-labelled. Enough to test the pipeline, not enough to train or to describe real riders.</p></div>
+        <div class="card"><h3>Governance and risk</h3><p>Real posts would contain usernames and locations. Any real use needs consent, data minimization and a privacy review.</p></div>
+        <div class="card"><h3>Technology and tools</h3><p>A lexicon (VADER) beat a trained model on this little data, so the simpler tool wins until more data exists.</p></div>
+        <div class="card"><h3>People and adoption</h3><p>Scores sort the queue. People read the messages, especially anything about safety.</p></div>
+        <div class="card"><h3>Outcomes and monitoring</h3><p>Re-score against fresh human labels every quarter, and track errors on safety messages separately.</p></div>
+      </div>
+    </div></section>
+
+  </main>
+
+  <footer class="rai-foot"><div class="wrap">
+    <span>Built by Daniel S. Demoz · <a href="https://www.danieldemoz.com">danieldemoz.com</a></span>
+    <span>Example messages written for testing · No personal data</span>
+  </div></footer>
+<script>
+(async function(){
+  const R = await (await fetch('results.json')).json();
+  const $ = id => document.getElementById(id);
+  const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]);
+  const pill = l => '<span class="pill ' + (l==='negative'?'bad':l==='positive'?'ok':'warn') + '">' + l + '</span>';
+  const tot = R.n;
+  $('mix').innerHTML = ['negative','neutral','positive'].map(l => { const n = R.label_counts[l]||0;
+    return '<div style="display:flex;align-items:center;gap:10px;margin:8px 0"><span style="width:76px">'+l+'</span><div class="bar" style="flex:1;margin:0"><i style="width:'+(n/tot*100)+'%"></i></div><b style="width:60px;text-align:right">'+n+' ('+Math.round(n/tot*100)+'%)</b></div>'; }).join('');
+  const errs = R.rows.filter(r => r.label !== r.vader);
+  $('errs').innerHTML = '<tr><th>Message</th><th>Human label</th><th>VADER</th><th>VADER score</th></tr>' + errs.map(r => '<tr><td>'+esc(r.text)+'</td><td>'+pill(r.label)+'</td><td>'+pill(r.vader)+'</td><td>'+r.score.toFixed(2)+'</td></tr>').join('');
+  let f = 'all';
+  function draw(){
+    const el = $('filt'); el.innerHTML = '';
+    ['all','negative','neutral','positive'].forEach(v => { const b = document.createElement('button'); b.type='button'; b.textContent = v[0].toUpperCase()+v.slice(1); b.setAttribute('aria-pressed', String(f===v)); b.onclick = () => { f = v; draw(); }; el.appendChild(b); });
+    $('rows').innerHTML = '<tr><th>Message</th><th>Topic</th><th>Human label</th><th>VADER</th></tr>' + R.rows.filter(r => f==='all' || r.label===f).map(r => '<tr'+(r.label!==r.vader?' class="hl"':'')+'><td>'+esc(r.text)+'</td><td>'+r.topic.replace('_',' ')+'</td><td>'+pill(r.label)+'</td><td>'+pill(r.vader)+'</td></tr>').join('');
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

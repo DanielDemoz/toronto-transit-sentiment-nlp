@@ -4,6 +4,7 @@ numpy>=1.23.0
 scikit-learn>=1.2.0
 
 # NLP Libraries
+vaderSentiment>=3.3
 nltk>=3.8
 spacy>=3.5.0
 transformers>=4.30.0
@@ -31,5 +32,4 @@ tqdm>=4.65.0
 
 # Model Persistence
 joblib>=1.2.0
-pickle5>=0.0.12
 

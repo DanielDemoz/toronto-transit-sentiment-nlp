@@ -1,0 +1,364 @@
+{
+ "n": 40,
+ "label_counts": {
+  "negative": 17,
+  "positive": 16,
+  "neutral": 7
+ },
+ "methods": {
+  "majority": {
+   "name": "Always guess the most common label",
+   "accuracy": 0.425,
+   "macro_f1": 0.199
+  },
+  "tfidf": {
+   "name": "TF-IDF + logistic regression (5-fold cross-validation)",
+   "accuracy": 0.45,
+   "macro_f1": 0.326
+  },
+  "vader": {
+   "name": "VADER lexicon (no training)",
+   "accuracy": 0.8,
+   "macro_f1": 0.775
+  }
+ },
+ "confusion_vader": {
+  "negative": {
+   "negative": 12,
+   "neutral": 2,
+   "positive": 3
+  },
+  "neutral": {
+   "negative": 1,
+   "neutral": 5,
+   "positive": 1
+  },
+  "positive": {
+   "negative": 0,
+   "neutral": 1,
+   "positive": 15
+  }
+ },
+ "rows": [
+  {
+   "text": "@TTChelps The new streetcars are amazing! So smooth and comfortable 🚊",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.825,
+   "tfidf": "positive",
+   "topic": "streetcar"
+  },
+  {
+   "text": "Waited 45 minutes for the 29 Dufferin bus in -15 weather. This is unacceptable! #TTCdelays",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.509,
+   "tfidf": "negative",
+   "topic": "bus"
+  },
+  {
+   "text": "Just another commute on Line 1. Nothing special to report.",
+   "label": "neutral",
+   "vader": "negative",
+   "score": -0.309,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "My Presto card didn't work AGAIN at King Station. So frustrating! @TTChelps fix this!",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.651,
+   "tfidf": "positive",
+   "topic": "payment"
+  },
+  {
+   "text": "Shoutout to the friendly TTC driver on the 504 King today. Made my morning! ☀️",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.541,
+   "tfidf": "negative",
+   "topic": "streetcar"
+  },
+  {
+   "text": "Bloor-Yonge station is absolutely packed. Can barely breathe in here 😫",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.44,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "The accessibility features at Union Station are excellent. Well done TTC!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.726,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "Signal problems on Line 2 AGAIN. 3rd time this week! #TTCDelays",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.457,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "Clean train today on the Spadina line. Appreciate the maintenance crew!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.69,
+   "tfidf": "positive",
+   "topic": "subway"
+  },
+  {
+   "text": "Why do fares keep increasing when service quality keeps decreasing? 💸",
+   "label": "negative",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "fare"
+  },
+  {
+   "text": "Normal rush hour commute. Subway was on time for once.",
+   "label": "neutral",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "Felt very unsafe on the late night 35 Jane bus. Need more security presence.",
+   "label": "negative",
+   "vader": "positive",
+   "score": 0.401,
+   "tfidf": "positive",
+   "topic": "bus"
+  },
+  {
+   "text": "Love the new digital displays showing real-time arrivals. Very helpful! 📱",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.822,
+   "tfidf": "positive",
+   "topic": "technology"
+  },
+  {
+   "text": "Dirty seats and floor on the 510 Spadina streetcar. Needs cleaning badly.",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.718,
+   "tfidf": "positive",
+   "topic": "streetcar"
+  },
+  {
+   "text": "Just riding the TTC to work like every other day.",
+   "label": "neutral",
+   "vader": "positive",
+   "score": 0.361,
+   "tfidf": "negative",
+   "topic": "general"
+  },
+  {
+   "text": "The driver helped an elderly passenger with their walker. Faith in humanity restored! ❤️",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.67,
+   "tfidf": "negative",
+   "topic": "bus"
+  },
+  {
+   "text": "Station closures on weekends are so inconvenient. Plan better TTC!",
+   "label": "negative",
+   "vader": "positive",
+   "score": 0.087,
+   "tfidf": "positive",
+   "topic": "service"
+  },
+  {
+   "text": "Wheelchair ramp at Finch station is broken. This is a serious accessibility issue!",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.571,
+   "tfidf": "negative",
+   "topic": "accessibility"
+  },
+  {
+   "text": "Quick and efficient service on Line 4 this morning. No complaints!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.654,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "The crowding during peak hours is getting worse every year.",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.477,
+   "tfidf": "negative",
+   "topic": "crowding"
+  },
+  {
+   "text": "Just took the subway downtown. Standard commute.",
+   "label": "neutral",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "subway"
+  },
+  {
+   "text": "TTC app is actually working properly today! Surprised and pleased 😊",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.878,
+   "tfidf": "positive",
+   "topic": "technology"
+  },
+  {
+   "text": "Bus driver blew past my stop without stopping. I was clearly visible!",
+   "label": "negative",
+   "vader": "positive",
+   "score": 0.304,
+   "tfidf": "positive",
+   "topic": "bus"
+  },
+  {
+   "text": "The heating on the streetcar is broken. Freezing cold ride 🥶",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.542,
+   "tfidf": "negative",
+   "topic": "streetcar"
+  },
+  {
+   "text": "Appreciate the customer service rep who helped me with my Presto issue.",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.402,
+   "tfidf": "negative",
+   "topic": "customer_service"
+  },
+  {
+   "text": "Another delay on Line 1 due to 'passenger assistance'. Happens every day.",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.318,
+   "tfidf": "positive",
+   "topic": "subway"
+  },
+  {
+   "text": "The art installations at some stations really brighten up the commute! 🎨",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.54,
+   "tfidf": "positive",
+   "topic": "station"
+  },
+  {
+   "text": "Regular commute on the 506 Carlton. Nothing noteworthy.",
+   "label": "neutral",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "streetcar"
+  },
+  {
+   "text": "Security guard was very helpful when I was lost at St. George station.",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.493,
+   "tfidf": "negative",
+   "topic": "security"
+  },
+  {
+   "text": "Why is there no cell service in the tunnels? It's 2024! 📵",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.571,
+   "tfidf": "negative",
+   "topic": "technology"
+  },
+  {
+   "text": "The escalators at Spadina station have been broken for weeks. Fix them!",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.525,
+   "tfidf": "negative",
+   "topic": "maintenance"
+  },
+  {
+   "text": "Express bus service during rush hour is a great idea. More of this please!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.81,
+   "tfidf": "negative",
+   "topic": "bus"
+  },
+  {
+   "text": "Just another ride on the TTC. Gets me from A to B.",
+   "label": "neutral",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "general"
+  },
+  {
+   "text": "Station announcement was clear and helpful during the delay. Thank you!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.709,
+   "tfidf": "positive",
+   "topic": "communication"
+  },
+  {
+   "text": "Smells like someone was smoking in the subway car. Disgusting! 🚭",
+   "label": "negative",
+   "vader": "negative",
+   "score": -0.525,
+   "tfidf": "negative",
+   "topic": "cleanliness"
+  },
+  {
+   "text": "The Blue Night Network is a lifesaver for night shift workers!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.624,
+   "tfidf": "negative",
+   "topic": "bus"
+  },
+  {
+   "text": "Service alerts on Twitter are timely and accurate. Keep it up @TTChelps!",
+   "label": "positive",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "communication"
+  },
+  {
+   "text": "Why do buses bunch together? Waited forever then 3 came at once.",
+   "label": "negative",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "negative",
+   "topic": "bus"
+  },
+  {
+   "text": "Taking my usual route to work on the TTC.",
+   "label": "neutral",
+   "vader": "neutral",
+   "score": 0.0,
+   "tfidf": "positive",
+   "topic": "general"
+  },
+  {
+   "text": "The new station at Vaughan Metropolitan Centre is beautiful and modern!",
+   "label": "positive",
+   "vader": "positive",
+   "score": 0.636,
+   "tfidf": "positive",
+   "topic": "station"
+  }
+ ]
+}
